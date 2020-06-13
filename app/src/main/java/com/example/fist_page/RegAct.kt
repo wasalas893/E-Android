@@ -1,5 +1,6 @@
 package com.example.fist_page
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_reg.*
 
 class RegAct : AppCompatActivity() {
@@ -29,7 +31,11 @@ class RegAct : AppCompatActivity() {
                    if(response.equals("0"))
                        Toast.makeText(this,"Mobile already used",Toast.LENGTH_SHORT).show()
                    else
-                       Toast.makeText(this,"User Created",Toast.LENGTH_SHORT).show()
+                   {
+                       UserInfo.mobile=reg_mobile.text.toString()
+                       var i=Intent(this,HomeAct::class.java)
+                       startActivity(i)
+                   }
 
                },Response.ErrorListener { error ->
                    Toast.makeText(this,error.message,Toast.LENGTH_SHORT).show()
