@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeAct"></activity>
+        <activity android:name=".ItemAct"></activity>
+        <activity android:name=".HomeAct" />
         <activity android:name=".RegAct" />
         <activity android:name=".MainActivity">
             <intent-filter>
